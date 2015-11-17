@@ -174,7 +174,7 @@ class MenuController
   end
 
   def entry_submenu(entry)
-    puts "\nn - next entry"
+    puts "n - next entry"
     puts "d - delete entry"
     puts "e - edit this entry"
     puts "m - return to main menu"
@@ -208,14 +208,17 @@ class MenuController
       selection = gets.chomp
 
       case selection
+
       when "d"
         system "clear"
         delete_entry(entry)
         main_menu
+
       when "e"
         edit_entry(entry)
         system "clear"
         main_menu
+        
       when "m"
         system "clear"
         main_menu
