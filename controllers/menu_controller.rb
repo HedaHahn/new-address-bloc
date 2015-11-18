@@ -202,7 +202,7 @@ class MenuController
     end
 
     def search_submenu(entry)
-      puts "\nd - delete entry"
+      puts "d - delete entry"
       puts "e - edit this entry"
       puts "m - return to main menu"
       selection = gets.chomp
@@ -218,7 +218,6 @@ class MenuController
         edit_entry(entry)
         system "clear"
         main_menu
-
       when "m"
         system "clear"
         main_menu
