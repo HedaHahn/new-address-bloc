@@ -27,6 +27,7 @@ class AddressBook
       if name == entry.name && phone_number == phone_number && email == email
         @entries.delete_at(index)
       end
+    end
   end
 
     def import_from_csv(file_name)
@@ -67,5 +68,4 @@ class AddressBook
       end
       return nil
     end
-  
-  end
+end

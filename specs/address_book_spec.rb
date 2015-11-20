@@ -109,19 +109,19 @@ require_relative '../models/address_book'
     it "imports the 1st entry from the other CSV file" do
       book.import_from_csv("entries2.csv")
       entry_one = book.entries[0]
-      check_entry(entry_one, "Heda" ,"702-321-9754", "heda@hedahahn.com")
+      check_entry(entry_one, "Caroline" ,"702-321-9754", "heda@hedahahn.com")
     end
 
     it "imports the 2nd entry" do
       book.import_from_csv("entries2.csv")
       entry_two = book.entries[1]
-      check_entry(entry_two, "Caroling", "214-466-7131", "cgsmalley@gmail.com")
+      check_entry(entry_two, "Greg", "214-466-7131", "cgsmalley@gmail.com")
     end
 
     it "imports the 3rd entry" do
       book.import_from_csv("entries2.csv")
       entry_three = book.entries[2]
-      check_entry(entry_three, "Greg", "214-368-7030", "greg@halfile.com")
+      check_entry(entry_three, "Heda", "214-368-7030", "greg@halfile.com")
     end
    end
 
