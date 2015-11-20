@@ -43,7 +43,9 @@ class MenuController
       view_entry
     when 6
       system "clear"
-      detonate_all_entries
+      @address_book.nuke
+      puts "All entries deleted!"
+      main_menu
     when 7
       puts "Good-bye!"
       exit(0)
@@ -98,7 +100,7 @@ class MenuController
         puts "Please enter the entry number"
         selection = gets.chomp.to_i
         system "clear"
-  
+
         @address_book.entries.each_with_index do |entry,index|
           if (index + 1) == selection
             puts entry.to_s
@@ -178,17 +180,20 @@ class MenuController
     puts "e - edit this entry"
     puts "m - return to main menu"
 
-    selection = $stdin.gets.chomp
+    selection = gets.chomp
 
     case selection
       when "n"
 
       when "d"
+        system "clear"
         delete_entry(entry)
+        main_menu
 
       when "e"
         edit_entry(entry)
         entry_submenu(entry)
+        main_menu
 
       when "m"
         system "clear"
