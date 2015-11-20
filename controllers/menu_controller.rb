@@ -96,10 +96,9 @@ class MenuController
 
   def view_entry
         puts "Please enter the entry number"
-        #Forgot to add the chomp (get rid of whitespace)
         selection = gets.chomp.to_i
         system "clear"
-        # Loop through and make sure the user is in the array
+  
         @address_book.entries.each_with_index do |entry,index|
           if (index + 1) == selection
             puts entry.to_s
@@ -174,12 +173,12 @@ class MenuController
   end
 
   def entry_submenu(entry)
-    puts "n - next entry"
+    puts "/nn - next entry"
     puts "d - delete entry"
     puts "e - edit this entry"
     puts "m - return to main menu"
 
-    selection = gets.chomp
+    selection = $stdin.gets.chomp
 
     case selection
       when "n"
@@ -218,7 +217,7 @@ class MenuController
         edit_entry(entry)
         system "clear"
         main_menu
-        
+
       when "m"
         system "clear"
         main_menu

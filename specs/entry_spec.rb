@@ -1,4 +1,4 @@
-require_relative 'entry'
+require_relative '../models/entry'
 
 class AddressBook
      attr_accessor :entries
